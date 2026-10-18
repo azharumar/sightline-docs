@@ -27,17 +27,22 @@ The rules for agents live in `sightline-docs/agents/rules/` (`core.md` for every
 
 ### E0. Foundation and Frappe spikes
 
-| ID | Task |
-|---|---|
-| E0-01 | Boilerplate app (done in the setup pull request): pyproject, hooks, modules, agent files, docs submodule; then a dev bench with the production Frappe version and MariaDB (frappe_docker devcontainer) |
-| E0-02 | CI with a disposable bench that installs the app on a fresh site and runs tests; pytest for pure modules; copy lint; `scripts/check.sh` |
-| E0-03 | Vue app scaffold in `frontend/` (frappe-ui, Vite, Tailwind), built into `public/frontend`, served by the `www` page |
-| E0-04 | **Spike: app mount.** Serve the app at `/s/` with route rules and `/` redirecting to it; deep links and reloads work; redirect `/login` and `/app` for Sightline roles |
-| E0-05 | **Spike: Website Users.** A Website User with a `desk_access = 0` role reads and writes a test DocType through `frappe.get_list`, `get_doc`, comments and the resource API, with `has_permission` and `permission_query_conditions` applied; confirm `safe_eval_globals` works in a Workflow condition |
-| E0-06 | **Spike: per-hotel roles.** Hotel Member, the access module skeleton and a Issue DocType: the three-membership person gets Hotel Manager rights at A1 and Staff rights at A3 across list, get, update, report view and link search. Pass: tests green and the access code stays under about 200 lines |
-| E0-07 | **Spike: PWA and PDF.** Manifest and service worker served from the root, install on Android Chrome and iPhone Safari; a print format with SVG and zarnik-ds fonts renders to PDF in the image |
+Tracked as issues in `azharumar/sightline-app`: epic #2, tasks #3 to #11, Gate 0 #12. The issues are the working copy of this table; if they change, update this table in the same week.
 
-The spikes E0-04 to E0-07 must pass before E1 starts. Any failure is written up as a `type:question` issue with the fallback (wrap a refused API, change approach) for Azhar.
+| ID | Issue | Task |
+|---|---|---|
+| E0-00 | #3 | Azhar installs the boilerplate on `app.sightline.zarnik.com` and records the Frappe, Python, Node and MariaDB versions |
+| E0-01 | #4 | Developer bench in a devcontainer matching production (MariaDB, redis, site in developer mode, app installed from the working copy) |
+| E0-02 | #5 | CI with a disposable bench that installs the app on a fresh site and runs tests; `scripts/check.sh` |
+| E0-03 | #6 | Vue app scaffold in `frontend/` (frappe-ui, Vite, Tailwind), built into `sightline/public/frontend` and the `www` page |
+| E0-04 | #7 | **Spike: app mount.** Serve the app at `/s/` with `/` redirecting to it; deep links and reloads work; `/login` and `/app` redirect Sightline roles |
+| E0-05 | #8 | **Spike: Website Users.** A Website User with a `desk_access = 0` role works through `get_list`, `get_doc`, comments and the resource API with permission hooks applied; `safe_eval_globals` in a Workflow condition |
+| E0-06 | #9 | **Spike: per-hotel roles.** Hotel Member and the access module: Hotel Manager rights at A1 and Staff rights at A3 for one person; access code under about 200 lines |
+| E0-07 | #10 | **Spike: PWA.** Manifest and service worker under `/s/`; installs on Android Chrome and iPhone Safari |
+| E0-08 | #11 | **Spike: PDF.** A print format with an SVG chart, an embedded image and zarnik-ds fonts renders to PDF |
+| Gate 0 | #12 | Azhar reviews the spike results |
+
+The spikes must pass before E1 starts. Any failure is written up as a `type:question` issue with the fallback (wrap a refused API, change approach) for Azhar.
 
 ### E1. Design system on frappe-ui (Gate 1)
 
@@ -197,7 +202,7 @@ The spikes E0-04 to E0-07 must pass before E1 starts. Any failure is written up 
 
 | Gate | After | Azhar checks |
 |---|---|---|
-| 0 | E0 spikes | Spike results: app mount at `/s/`, Website Users, per-hotel roles, PWA install and PDF |
+| 0 | E0 spikes (#12) | Spike results: app mount at `/s/`, Website Users, per-hotel roles, PWA install and PDF |
 | 1 | E1 | `/design` matches the approved design |
 | 1b | E4-00 | Spike screens on a phone read as Sightline and meet tap targets |
 | 2 | E6 | Every seed audit template item |

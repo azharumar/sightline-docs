@@ -27,6 +27,8 @@ Every task or spike body follows the template in `agents/github/ISSUE_TEMPLATE/t
 - **Tests:** what proves it.
 - **Depends on:** issue numbers, or "none".
 
+**Labels line.** An issue body may start with `Labels: ` followed by label names in backticks (used when issues were created before the labels existed). Before working on such an issue, an agent adds any of those labels the issue does not have yet, creating missing ones with `docs/agents/github/setup-labels.sh`.
+
 ## 2. Status
 
 Status is a label, mirrored in the GitHub Project's Status field: no label (backlog) → `status:ready` → `status:in-progress` → `status:in-review` → closed. `status:blocked` carries a comment saying why. Agents change labels; nobody edits status in files.
