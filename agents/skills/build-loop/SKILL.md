@@ -9,7 +9,7 @@ Follow `docs/src/content/docs/agents/workflow.md` (in `sightline-docs` itself: `
 
 Argument (optional): a run limit (number of issues, default 10) or an epic label such as `epic:E0`.
 
-1. Ensure the `docs/` submodule is present: `git submodule update --init --recursive`.
+1. Ensure the `docs/` submodule is present: if `docs/` is empty, run `git submodule update --init --recursive` (only then: it resets a bumped pointer).
 2. List open issues labelled `status:ready` without `needs-human`, in the given epic if one was named. Drop any whose "Depends on" issues are still open. Sort by epic, then number.
 3. If the list is empty: find open `type:task` or `type:spike` issues in the current epic with no status label whose dependencies are all closed, label them `status:ready`, and list again. If still empty, go to step 7.
 4. Take the first issue. Start a sub-agent (Claude Code: the Agent tool; Cursor: a new agent or background agent) with exactly this instruction: "Run the next-task skill for issue #N in this repository." Give it nothing else. You may run up to 3 sub-agents in parallel when their issues share no files and do not depend on each other.
