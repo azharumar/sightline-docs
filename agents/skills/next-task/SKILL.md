@@ -15,6 +15,6 @@ Rules: `docs/agents/rules/core.md` plus the repository's own rules file (`docs/a
 6. **Pull request:** title = issue title; body from `.github/pull_request_template.md` with `Closes #<number>`; label the issue `status:in-review`.
 7. **Merge decision:**
    - If the diff touches access, auth, view as, files, the allow list or security tests, or the issue has `needs-human`: add the `security` label to the pull request and stop here.
-   - Otherwise enable auto-merge with squash (`gh pr merge --auto --squash`). If auto-merge is not available, wait for CI and squash-merge when it is green.
+   - Otherwise wait for the `ci` check on the latest commit and squash-merge when it has succeeded (`gh pr checks --watch`, then `gh pr merge --squash`). Never merge on a red or pending check. GitHub Free has no auto-merge for private repositories.
 8. **If CI fails:** read the failing check's log, fix, push. After two failed rounds on the same failure: label the issue `status:blocked`, comment the failing check and your diagnosis, and stop.
 9. **Report** in at most 5 lines: issue, pull request, result, open points.

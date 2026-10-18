@@ -24,14 +24,24 @@ Run `docs/agents/github/setup-labels.sh <owner/repo>` once (needs the GitHub CLI
 
 Create one Project, "Sightline build", linked to `sightline-app` (and later `sightline-web`), with a board view grouped by Status. Fields: Status (Backlog, Ready, In progress, In review, Blocked, Needs human, Done), Epic, Size. Add the built-in workflow "Item added to project → Backlog" and "Item closed → Done". Labels stay the source of truth for agents; the Project is the view for people.
 
-## Branch protection on `main`
+## Branch protection on `main` (not available on GitHub Free)
 
-- Require a pull request before merging, with the `ci` check passing.
-- Allow squash merging and auto-merge.
-- No required human approval (agents merge on green), except that pull requests labelled `security` are left for review by rule.
+The repositories are private on GitHub Free (decision of 2026-10-18), and GitHub Free offers neither branch protection rules nor auto-merge for private repositories. So the rules are enforced by the agents themselves:
+
+- Never push to `main`; always a branch and a pull request.
+- Merge only after reading the pull request's check runs and seeing `ci` completed with success on the latest commit. Use squash merge.
+- Never merge a pull request labelled `security` or `needs-human`.
+
+If the account moves to GitHub Pro or Team later: require a pull request and the `ci` check on `main`, allow squash merge and auto-merge, and agents will use auto-merge instead of waiting.
+
+## GitHub Free limits that matter
+
+- Actions: 2,000 minutes a month for private repositories. CI jobs are kept short; the optional agent loop workflow uses minutes too.
+- Issues, sub-issues, labels and Projects are free and are all the loop needs.
 
 ## Access for agents
 
 - Cursor: connect GitHub in Cursor settings; background agents need access to both `sightline-app` and `sightline-docs` (the submodule).
 - Claude Code: the GitHub CLI or the GitHub connector with access to both repositories.
-- If `sightline-docs` is private, CI needs a token that can read it to check out the submodule (secret `DOCS_READ_TOKEN`, a fine-grained token with read access to `sightline-docs`).
+- `sightline-docs` is private, so CI in `sightline-app` and `sightline-web` needs the secret `DOCS_READ_TOKEN` (a fine-grained token with Contents: read on `sightline-docs`) to check out the submodule.
+- Netlify must also read the private submodule when it builds `sightline-web`: add the Netlify site's deploy key (Netlify: Site configuration, Build and deploy, Deploy key) to `sightline-docs` as a read-only deploy key, or give the Netlify GitHub app access to `sightline-docs`.

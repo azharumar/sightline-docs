@@ -52,7 +52,7 @@ An issue is **ready** when it is open, has `status:ready`, has no `needs-human` 
 3. Branch `issue-<number>-<slug>` from the latest `main`. Build in small commits; push after each.
 4. Run the repository's checks. Fix until clean.
 5. Open a pull request: title = issue title, body from the template, `Closes #<number>`. Label `status:in-review` on the issue.
-6. Merge: if the change touches a `security` path or the issue has `needs-human`, label the pull request `security` and stop. Otherwise enable auto-merge (squash) so it merges when CI is green; if auto-merge is not available, wait for CI and squash-merge when green.
+6. Merge: if the change touches a `security` path or the issue has `needs-human`, label the pull request `security` and stop. Otherwise wait for the `ci` check on the latest commit and squash-merge when it has succeeded (GitHub Free has no auto-merge for private repositories; if auto-merge is ever available, enable it instead).
 7. If CI fails: fix and push. After two failed rounds on the same failure, label the issue `status:blocked`, comment the failure, and stop.
 8. Report in at most 5 lines: issue, pull request, result, anything left open.
 
@@ -75,6 +75,6 @@ Only the current epic has task issues. When an epic's last task is merged, `plan
 
 ## 7. Guardrails
 
-- Branch protection on `main`: pull requests only, required check `ci`, squash merge, auto-merge allowed.
+- On GitHub Free there is no branch protection for private repositories: agents never push to `main` and merge only after `ci` succeeded on the latest commit (`agents/github-setup`).
 - Agents never merge `security` or `needs-human` pull requests, never close gate issues, never close questions without an answer from Azhar.
 - Agents never change CI to make a check pass, and never skip or delete tests.
