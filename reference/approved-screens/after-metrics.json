@@ -1,0 +1,811 @@
+{
+ "auditor-home": {
+  "title": "Dashboard",
+  "pageHeight": 1027,
+  "body": "16px/24px",
+  "h1": {
+   "22px/28px/600": 1
+  },
+  "h2": {
+   "18px/24px/600": 2
+  },
+  "h3": {},
+  "td": {},
+  "th": {},
+  "label": {
+   "13px/18px/600": 1
+  },
+  "button": {
+   "13px/18px/400": 1,
+   "16px/24px/600": 1,
+   "16px/24px/400": 1,
+   "13px/16.25px/400": 1
+  },
+  "badge": {
+   "13px/18px/600": 2
+  },
+  "p": {
+   "13px/18px/400": 4
+  },
+  "distinctSizes": [
+   "13px",
+   "16px",
+   "18px",
+   "22px"
+  ],
+  "weights": [
+   "400",
+   "600"
+  ],
+  "textCharsBySize": {
+   "13px": 416,
+   "18px": 80,
+   "16px": 184,
+   "22px": 9
+  },
+  "targets": 21,
+  "smallTargets": 0,
+  "smallSample": [],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 45,
+  "headerH": 48,
+  "h1Top": 111,
+  "h1Bottom": 139,
+  "firstContentTop": 161,
+  "viewportNoise": {
+   "borders": 17,
+   "cards": 4,
+   "badges": 6
+  },
+  "navs": [
+   "Main top773 h72 pos:fixed"
+  ],
+  "reviewPicker": 44,
+  "smallInRows": [],
+  "itemsInViewport": 0,
+  "itemsFullyInViewport": 0,
+  "itemHeights": []
+ },
+ "auditor-capture": {
+  "title": "Ops & Quality, October 2026",
+  "pageHeight": 1274,
+  "body": "16px/24px",
+  "h1": {
+   "18px/24px/600": 1
+  },
+  "h2": {
+   "16px/24px/400": 1
+  },
+  "h3": {
+   "16px/22px/600": 5
+  },
+  "td": {},
+  "th": {},
+  "label": {
+   "13px/18px/600": 1,
+   "16px/24px/600": 10
+  },
+  "button": {
+   "13px/18px/400": 1,
+   "16px/24px/600": 18,
+   "18px/24px/600": 35,
+   "13px/16.25px/400": 1
+  },
+  "badge": {
+   "13px/18px/600": 1
+  },
+  "p": {
+   "13px/18px/400": 7
+  },
+  "distinctSizes": [
+   "13px",
+   "16px",
+   "18px"
+  ],
+  "weights": [
+   "400",
+   "600"
+  ],
+  "textCharsBySize": {
+   "13px": 347,
+   "18px": 81,
+   "16px": 245
+  },
+  "targets": 79,
+  "smallTargets": 15,
+  "smallSample": [
+   "a h18 w103 \"SOP-HK-001 opens the SOP in a \"",
+   "input h1 w1 \"Take photo for Door, lock and \"",
+   "input h1 w1 \"Add file for Door, lock and sa\"",
+   "a h18 w103 \"SOP-HK-002 opens the SOP in a \"",
+   "input h1 w1 \"Take photo for Cleanliness and\"",
+   "input h1 w1 \"Add file for Cleanliness and s\"",
+   "a h18 w103 \"SOP-HK-003 opens the SOP in a \"",
+   "input h1 w1 \"Take photo for Bed and linen\"",
+   "input h1 w1 \"Add file for Bed and linen\"",
+   "a h18 w103 \"SOP-HK-004 opens the SOP in a \"",
+   "input h1 w1 \"Take photo for Bathroom fixtur\"",
+   "input h1 w1 \"Add file for Bathroom fixtures\"",
+   "a h18 w103 \"SOP-HK-005 opens the SOP in a \"",
+   "input h1 w1 \"Take photo for Air conditionin\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 45,
+  "headerH": 48,
+  "h1Top": 110,
+  "h1Bottom": 134,
+  "firstContentTop": 173,
+  "viewportNoise": {
+   "borders": 40,
+   "cards": 6,
+   "badges": 1
+  },
+  "navs": [
+   "Main top773 h72 pos:fixed"
+  ],
+  "reviewPicker": 44,
+  "smallInRows": [],
+  "itemsInViewport": 4,
+  "itemsFullyInViewport": 3,
+  "itemHeights": [
+   168,
+   152,
+   152,
+   152,
+   152
+  ]
+ },
+ "auditor-audits": {
+  "title": "Audits",
+  "pageHeight": 844,
+  "body": "16px/24px",
+  "h1": {
+   "22px/28px/600": 1
+  },
+  "h2": {},
+  "h3": {},
+  "td": {},
+  "th": {},
+  "label": {
+   "13px/18px/600": 1
+  },
+  "button": {
+   "13px/18px/400": 1,
+   "16px/24px/600": 1,
+   "13px/16.25px/400": 1
+  },
+  "badge": {
+   "13px/18px/600": 3
+  },
+  "p": {},
+  "distinctSizes": [
+   "13px",
+   "16px",
+   "18px",
+   "22px"
+  ],
+  "weights": [
+   "400",
+   "600"
+  ],
+  "textCharsBySize": {
+   "13px": 267,
+   "18px": 9,
+   "16px": 132,
+   "22px": 6
+  },
+  "targets": 17,
+  "smallTargets": 0,
+  "smallSample": [],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 45,
+  "headerH": 48,
+  "h1Top": 111,
+  "h1Bottom": 139,
+  "firstContentTop": 165,
+  "viewportNoise": {
+   "borders": 14,
+   "cards": 1,
+   "badges": 7
+  },
+  "navs": [
+   "Main top773 h72 pos:fixed"
+  ],
+  "reviewPicker": 44,
+  "smallInRows": [],
+  "itemsInViewport": 0,
+  "itemsFullyInViewport": 0,
+  "itemHeights": []
+ },
+ "hotel_manager-dashboard": {
+  "title": "Dashboard",
+  "pageHeight": 1294,
+  "body": "16px/24px",
+  "h1": {
+   "22px/28px/600": 1
+  },
+  "h2": {
+   "18px/24px/600": 3
+  },
+  "h3": {},
+  "td": {},
+  "th": {},
+  "label": {
+   "13px/18px/600": 1
+  },
+  "button": {
+   "13px/18px/400": 1,
+   "16px/24px/400": 1,
+   "13px/16.25px/400": 1
+  },
+  "badge": {
+   "13px/18px/600": 5
+  },
+  "p": {
+   "13px/18px/400": 5
+  },
+  "distinctSizes": [
+   "13px",
+   "16px",
+   "18px",
+   "22px"
+  ],
+  "weights": [
+   "400",
+   "600"
+  ],
+  "textCharsBySize": {
+   "13px": 594,
+   "18px": 91,
+   "16px": 244,
+   "22px": 9
+  },
+  "targets": 24,
+  "smallTargets": 0,
+  "smallSample": [],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 45,
+  "headerH": 48,
+  "h1Top": 111,
+  "h1Bottom": 139,
+  "firstContentTop": 161,
+  "viewportNoise": {
+   "borders": 18,
+   "cards": 6,
+   "badges": 6
+  },
+  "navs": [
+   "Main top789 h55 pos:fixed"
+  ],
+  "reviewPicker": 44,
+  "smallInRows": [],
+  "itemsInViewport": 0,
+  "itemsFullyInViewport": 0,
+  "itemHeights": []
+ },
+ "hotel_manager-fixes": {
+  "title": "Fixes",
+  "pageHeight": 844,
+  "body": "16px/24px",
+  "h1": {
+   "22px/28px/600": 1
+  },
+  "h2": {},
+  "h3": {},
+  "td": {},
+  "th": {},
+  "label": {
+   "13px/18px/600": 1
+  },
+  "button": {
+   "13px/18px/400": 1,
+   "13px/16.25px/400": 1
+  },
+  "badge": {},
+  "p": {
+   "13px/18px/400": 1
+  },
+  "distinctSizes": [
+   "13px",
+   "16px",
+   "18px",
+   "22px"
+  ],
+  "weights": [
+   "400",
+   "600"
+  ],
+  "textCharsBySize": {
+   "13px": 365,
+   "18px": 13,
+   "16px": 91,
+   "22px": 5
+  },
+  "targets": 16,
+  "smallTargets": 0,
+  "smallSample": [],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 45,
+  "headerH": 48,
+  "h1Top": 111,
+  "h1Bottom": 139,
+  "firstContentTop": 161,
+  "viewportNoise": {
+   "borders": 15,
+   "cards": 1,
+   "badges": 5
+  },
+  "navs": [
+   "Main top789 h55 pos:fixed"
+  ],
+  "reviewPicker": 44,
+  "smallInRows": [],
+  "itemsInViewport": 0,
+  "itemsFullyInViewport": 0,
+  "itemHeights": []
+ },
+ "hotel_manager-fixdetail": {
+  "title": "Check-out and billing accuracy",
+  "pageHeight": 1939,
+  "body": "16px/24px",
+  "h1": {
+   "22px/28px/600": 1
+  },
+  "h2": {},
+  "h3": {
+   "18px/22.5px/600": 6
+  },
+  "td": {},
+  "th": {},
+  "label": {
+   "13px/18px/600": 1,
+   "13px/13px/600": 3,
+   "16px/24px/600": 1
+  },
+  "button": {
+   "13px/18px/400": 1,
+   "16px/24px/600": 4,
+   "16px/24px/400": 1,
+   "13px/16.25px/400": 1
+  },
+  "badge": {},
+  "p": {
+   "13px/18px/400": 4,
+   "16px/24px/400": 1
+  },
+  "distinctSizes": [
+   "13px",
+   "16px",
+   "18px",
+   "22px"
+  ],
+  "weights": [
+   "400",
+   "600"
+  ],
+  "textCharsBySize": {
+   "13px": 557,
+   "18px": 60,
+   "16px": 410,
+   "22px": 30
+  },
+  "targets": 24,
+  "smallTargets": 3,
+  "smallSample": [
+   "a h19 w96 \"SOP-FO-004\"",
+   "input h1 w1 \"Attach photos or files\"",
+   "select h1 w1 \"Priya Menon, Hotel Manager Lat\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 45,
+  "headerH": 48,
+  "h1Top": 145,
+  "h1Bottom": 201,
+  "firstContentTop": 235,
+  "viewportNoise": {
+   "borders": 5,
+   "cards": 1,
+   "badges": 1
+  },
+  "navs": [
+   "Main top789 h55 pos:fixed"
+  ],
+  "reviewPicker": 44,
+  "smallInRows": [],
+  "itemsInViewport": 0,
+  "itemsFullyInViewport": 0,
+  "itemHeights": []
+ },
+ "admin-dashboard": {
+  "title": "Dashboard",
+  "pageHeight": 1358,
+  "body": "16px/24px",
+  "h1": {
+   "22px/28px/600": 1
+  },
+  "h2": {
+   "18px/24px/600": 3
+  },
+  "h3": {},
+  "td": {},
+  "th": {},
+  "label": {
+   "13px/18px/600": 1
+  },
+  "button": {
+   "13px/18px/400": 1,
+   "16px/24px/600": 1,
+   "16px/24px/400": 1,
+   "13px/16.25px/400": 1
+  },
+  "badge": {
+   "13px/18px/600": 4
+  },
+  "p": {
+   "13px/18px/400": 6
+  },
+  "distinctSizes": [
+   "13px",
+   "16px",
+   "18px",
+   "22px"
+  ],
+  "weights": [
+   "400",
+   "600"
+  ],
+  "textCharsBySize": {
+   "13px": 634,
+   "18px": 92,
+   "16px": 244,
+   "22px": 9
+  },
+  "targets": 28,
+  "smallTargets": 0,
+  "smallSample": [],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 45,
+  "headerH": 48,
+  "h1Top": 111,
+  "h1Bottom": 139,
+  "firstContentTop": 161,
+  "viewportNoise": {
+   "borders": 16,
+   "cards": 6,
+   "badges": 4
+  },
+  "navs": [
+   "Main top773 h72 pos:fixed"
+  ],
+  "reviewPicker": 44,
+  "smallInRows": [],
+  "itemsInViewport": 0,
+  "itemsFullyInViewport": 0,
+  "itemHeights": []
+ },
+ "admin-templates": {
+  "title": "Audit templates",
+  "pageHeight": 844,
+  "body": "16px/24px",
+  "h1": {
+   "22px/28px/600": 1
+  },
+  "h2": {},
+  "h3": {},
+  "td": {},
+  "th": {},
+  "label": {
+   "13px/18px/600": 1
+  },
+  "button": {
+   "13px/18px/400": 1,
+   "16px/24px/600": 2,
+   "13px/16.25px/400": 1
+  },
+  "badge": {
+   "13px/18px/600": 1
+  },
+  "p": {
+   "13px/18px/400": 1
+  },
+  "distinctSizes": [
+   "13px",
+   "16px",
+   "18px",
+   "22px"
+  ],
+  "weights": [
+   "400",
+   "600"
+  ],
+  "textCharsBySize": {
+   "13px": 256,
+   "18px": 9,
+   "16px": 96,
+   "22px": 15
+  },
+  "targets": 22,
+  "smallTargets": 0,
+  "smallSample": [],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [
+   "LI.",
+   "A.inline-flex h-touch items-center rounded",
+   "LI.",
+   "A.inline-flex h-touch items-center rounded"
+  ],
+  "scrollers": [
+   "DIV sw543 cw358"
+  ],
+  "reviewBar": 45,
+  "headerH": 48,
+  "h1Top": 101,
+  "h1Bottom": 129,
+  "firstContentTop": 137,
+  "viewportNoise": {
+   "borders": 5,
+   "cards": 1,
+   "badges": 1
+  },
+  "navs": [
+   "Masters top233 h52 pos:static",
+   "Main top773 h72 pos:fixed"
+  ],
+  "reviewPicker": 44,
+  "smallInRows": [],
+  "itemsInViewport": 0,
+  "itemsFullyInViewport": 0,
+  "itemHeights": []
+ },
+ "admin-users": {
+  "title": "Users",
+  "pageHeight": 1438,
+  "body": "16px/24px",
+  "h1": {
+   "22px/28px/600": 1
+  },
+  "h2": {},
+  "h3": {},
+  "td": {},
+  "th": {},
+  "label": {
+   "13px/18px/600": 1,
+   "16px/24px/400": 1
+  },
+  "button": {
+   "13px/18px/400": 1,
+   "16px/24px/600": 3,
+   "13px/16.25px/400": 1
+  },
+  "badge": {
+   "13px/18px/600": 1
+  },
+  "p": {
+   "13px/18px/400": 2
+  },
+  "distinctSizes": [
+   "13px",
+   "16px",
+   "18px",
+   "22px"
+  ],
+  "weights": [
+   "400",
+   "600"
+  ],
+  "textCharsBySize": {
+   "13px": 1097,
+   "18px": 9,
+   "16px": 186,
+   "22px": 5
+  },
+  "targets": 31,
+  "smallTargets": 0,
+  "smallSample": [],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 45,
+  "headerH": 48,
+  "h1Top": 111,
+  "h1Bottom": 139,
+  "firstContentTop": 149,
+  "viewportNoise": {
+   "borders": 13,
+   "cards": 2,
+   "badges": 0
+  },
+  "navs": [
+   "Main top773 h72 pos:fixed"
+  ],
+  "reviewPicker": 44,
+  "smallInRows": [],
+  "itemsInViewport": 0,
+  "itemsFullyInViewport": 0,
+  "itemHeights": []
+ },
+ "group_head-dashboard": {
+  "title": "Dashboard",
+  "pageHeight": 1294,
+  "body": "16px/24px",
+  "h1": {
+   "22px/28px/600": 1
+  },
+  "h2": {
+   "18px/24px/600": 3
+  },
+  "h3": {},
+  "td": {},
+  "th": {},
+  "label": {
+   "13px/18px/600": 1
+  },
+  "button": {
+   "13px/18px/400": 1,
+   "16px/24px/600": 1,
+   "16px/24px/400": 1,
+   "13px/16.25px/400": 1
+  },
+  "badge": {
+   "13px/18px/600": 5
+  },
+  "p": {
+   "13px/18px/400": 5
+  },
+  "distinctSizes": [
+   "13px",
+   "16px",
+   "18px",
+   "22px"
+  ],
+  "weights": [
+   "400",
+   "600"
+  ],
+  "textCharsBySize": {
+   "13px": 599,
+   "18px": 91,
+   "16px": 244,
+   "22px": 9
+  },
+  "targets": 25,
+  "smallTargets": 0,
+  "smallSample": [],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 45,
+  "headerH": 48,
+  "h1Top": 111,
+  "h1Bottom": 139,
+  "firstContentTop": 161,
+  "viewportNoise": {
+   "borders": 18,
+   "cards": 6,
+   "badges": 6
+  },
+  "navs": [
+   "Main top773 h72 pos:fixed"
+  ],
+  "reviewPicker": 44,
+  "smallInRows": [],
+  "itemsInViewport": 0,
+  "itemsFullyInViewport": 0,
+  "itemHeights": []
+ },
+ "group_head-reports": {
+  "title": "Reports",
+  "pageHeight": 1096,
+  "body": "16px/24px",
+  "h1": {
+   "22px/28px/600": 1
+  },
+  "h2": {},
+  "h3": {
+   "16px/24px/600": 3
+  },
+  "td": {},
+  "th": {},
+  "label": {
+   "13px/18px/600": 1,
+   "13px/13px/600": 3
+  },
+  "button": {
+   "13px/18px/400": 1,
+   "16px/24px/600": 4,
+   "16px/24px/400": 2,
+   "13px/16.25px/400": 1
+  },
+  "badge": {},
+  "p": {
+   "13px/18px/400": 4
+  },
+  "distinctSizes": [
+   "13px",
+   "16px",
+   "18px",
+   "22px"
+  ],
+  "weights": [
+   "400",
+   "600"
+  ],
+  "textCharsBySize": {
+   "13px": 262,
+   "18px": 9,
+   "16px": 209,
+   "22px": 7
+  },
+  "targets": 26,
+  "smallTargets": 0,
+  "smallSample": [],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 45,
+  "headerH": 48,
+  "h1Top": 111,
+  "h1Bottom": 139,
+  "firstContentTop": 165,
+  "viewportNoise": {
+   "borders": 13,
+   "cards": 8,
+   "badges": 2
+  },
+  "navs": [
+   "Main top773 h72 pos:fixed"
+  ],
+  "reviewPicker": 44,
+  "smallInRows": [],
+  "itemsInViewport": 0,
+  "itemsFullyInViewport": 0,
+  "itemHeights": []
+ }
+}
