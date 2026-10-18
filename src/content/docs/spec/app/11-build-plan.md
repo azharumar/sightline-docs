@@ -16,12 +16,12 @@ The rules for agents live in `sightline-docs/agents/rules/` (`core.md` for every
 - Every hotel data read goes through `sightline.core.access` (hooks or `access.query_condition`). Every write goes through a service that calls `access.require`. No role names in code outside the access module and tests.
 - Every new whitelisted method is added to the allow list in the same pull request, with a security test.
 - Screens only in the Sightline app (`frontend/`); no Desk screens for Sightline users. Design tokens from zarnik-ds only; copy rules apply.
-- One task, one branch, one pull request, about one hour of work. Commit and push after every working step. Tests in every pull request. `scripts/check.sh` passes before pushing; CI green before merge.
+- One task, one branch, one pull request, about one hour of work. Commit and push after every working step. Tests in every pull request. `scripts/check.sh` passes before pushing; `scripts/check.sh --full` before merge where section 5 of `10-platform.md` asks for it. No CI.
 - Diffs touching `core/access.py`, `core/allow_list.py`, auth, view as, files or the security suite are read in full by the orchestrating session or Azhar before merge.
 - Secrets only in site config and the server's secret store; never commit or ask for production values.
 - Stop at every gate and tell Azhar exactly what to check.
 
-**Pipeline:** one GitHub issue per task in `azharumar/sightline-app` (goal, spec sections, files it may touch, done-when list, tests), grouped under an epic issue as sub-issues → `status:ready` → an agent takes it (`status:in-progress`), builds on branch `issue-<number>-<slug>`, runs the checks, opens a pull request that closes the issue → merges when CI is green and no human label applies → takes the next ready issue. Two failed rounds on the same failure: `status:blocked` with the reason. Status lives on the issues and the GitHub Project, never in files. Full loop: `agents/workflow`.
+**Pipeline:** one GitHub issue per task in `azharumar/sightline-app` (goal, spec sections, files it may touch, done-when list, tests), grouped under an epic issue as sub-issues → `status:ready` → an agent takes it (`status:in-progress`), builds on branch `issue-<number>-<slug>`, runs the checks, opens a pull request that closes the issue → merges when the local checks pass and no human label applies → takes the next ready issue. Two failed rounds on the same failure: `status:blocked` with the reason. Status lives on the issues and the GitHub Project, never in files. Full loop: `agents/workflow`.
 
 ## 2. Epics and tasks
 
@@ -33,7 +33,7 @@ Tracked as issues in `azharumar/sightline-app`: epic #2, tasks #3 to #11, Gate 0
 |---|---|---|
 | E0-00 | #3 | Azhar installs the boilerplate on `app.sightline.zarnik.com` and records the Frappe, Python, Node and MariaDB versions |
 | E0-01 | #4 | Developer bench in a devcontainer matching production (MariaDB, redis, site in developer mode, app installed from the working copy) |
-| E0-02 | #5 | CI with a disposable bench that installs the app on a fresh site and runs tests; `scripts/check.sh` |
+| E0-02 | #5 | `scripts/check.sh` (fast set) and `scripts/check.sh --full` (fresh test site on the developer bench, all tests); no CI |
 | E0-03 | #6 | Vue app scaffold in `frontend/` (frappe-ui, Vite, Tailwind), built into `sightline/public/frontend` and the `www` page |
 | E0-04 | #7 | **Spike: app mount.** Serve the app at `/s/` with `/` redirecting to it; deep links and reloads work; `/login` and `/app` redirect Sightline roles |
 | E0-05 | #8 | **Spike: Website Users.** A Website User with a `desk_access = 0` role works through `get_list`, `get_doc`, comments and the resource API with permission hooks applied; `safe_eval_globals` in a Workflow condition |
@@ -63,7 +63,7 @@ The spikes must pass before E1 starts. Any failure is written up as a `type:ques
 | E2-02 | Dokploy staging stack, site, HTTPS, scheduler on |
 | E2-03 | Dokploy production stack from the `production` branch |
 | E2-04 | R2 buckets wired in site config; GlitchTip projects and alerts; uptime monitor |
-| E2-05 | Backups to the second server, R2 sync, restore script tested in CI |
+| E2-05 | Backups to the second server, R2 sync, restore script tested by `scripts/check.sh --full` |
 
 ### E3. Data model and access
 

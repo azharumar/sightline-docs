@@ -26,8 +26,8 @@ These rules apply to every AI agent (Claude Code, Cursor or any other) and every
 
 ## 4. Quality bar
 
-- Every pull request has tests for what it changes, and all checks pass before merge.
-- Re-read your own diff before opening the pull request: what would a reviewer or CI reject?
+- Every pull request has tests for what it changes, and the repository's checks pass locally before merge. There is no CI: never add GitHub Actions workflows, branch protection or repository secrets.
+- Re-read your own diff before opening the pull request: what would a reviewer reject?
 - Smallest change that meets the issue's "Done when" list. No drive-by refactors, no unrequested features.
 - Commit and push after every working step, so a restart loses minutes.
 

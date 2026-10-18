@@ -50,10 +50,10 @@ An issue is **ready** when it is open, has `status:ready`, has no `needs-human` 
 1. Label `status:in-progress`, assign yourself if possible, comment "Started".
 2. Read the issue, `docs/agents/rules/core.md`, the repository's rules file, and only the listed spec sections.
 3. Branch `issue-<number>-<slug>` from the latest `main`. Build in small commits; push after each.
-4. Run the repository's checks. Fix until clean.
+4. Run the repository's checks locally (the "Checks before every push" list in its rules file). Fix until clean.
 5. Open a pull request: title = issue title, body from the template, `Closes #<number>`. Label `status:in-review` on the issue.
-6. Merge: if the change touches a `security` path or the issue has `needs-human`, label the pull request `security` and stop. Otherwise wait for the `ci` check on the latest commit and squash-merge when it has succeeded (GitHub Free has no auto-merge for private repositories; if auto-merge is ever available, enable it instead).
-7. If CI fails: fix and push. After two failed rounds on the same failure, label the issue `status:blocked`, comment the failure, and stop.
+6. Merge: if the change touches a `security` path or the issue has `needs-human`, label the pull request `security` and stop. Otherwise squash-merge it yourself once the local checks pass on the latest commit. There is no CI, no branch protection and no required check to wait for.
+7. If the checks keep failing: after two failed rounds on the same failure, label the issue `status:blocked`, comment the failure, and stop.
 8. Report in at most 5 lines: issue, pull request, result, anything left open.
 
 ## 4. Questions and decisions
@@ -71,10 +71,9 @@ Only the current epic has task issues. When an epic's last task is merged, `plan
 |---|---|
 | Cursor | Open an Agent chat in the repository (local or background agent) and run the `/build-loop` command. With auto-run enabled for terminal commands, it loops without approvals while the session is open |
 | Claude Code (terminal or web) | Run `/build-loop` in the repository. Sub-agents per issue keep the main context small. `.claude/settings.json` pre-approves the routine commands |
-| Claude Code GitHub Action (unattended, optional) | `.github/workflows/agent.yml` in the app repository runs `next-task` when an issue gets `status:ready` and again whenever an agent pull request merges, so the loop continues with nobody watching. Off until Azhar adds the `ANTHROPIC_API_KEY` secret and sets the repository variable `AGENT_LOOP_ENABLED=true` |
 
 ## 7. Guardrails
 
-- On GitHub Free there is no branch protection for private repositories: agents never push to `main` and merge only after `ci` succeeded on the latest commit (`agents/github-setup`).
+- The repositories have no GitHub Actions workflows, no branch protection and no repository secrets, by Azhar's decision. Agents never push to `main` directly; they merge their own pull requests after the local checks pass. Never add a workflow, a required check or a secret.
 - Agents never merge `security` or `needs-human` pull requests, never close gate issues, never close questions without an answer from Azhar.
-- Agents never change CI to make a check pass, and never skip or delete tests.
+- Agents never change a check to make it pass, and never skip or delete tests.

@@ -1,4 +1,4 @@
-// Checks that keep the single source of truth clean. Runs in CI and in `npm run check`.
+// Checks that keep the single source of truth clean. Runs in `npm run check`.
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, extname } from "node:path";
 
