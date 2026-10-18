@@ -22,7 +22,7 @@ Sightline is a hotel audit app. Sightline auditors visit hotels, score audit ite
 | `07-scoring.md` | Scoring rules, reference code, test cases | Scoring epic |
 | `08-email-files-pdf.md` | Email through Resend, notifications and digest, R2 files, print formats and PDF | Email, files, reports |
 | `09-frontend.md` | The Sightline app: Vue 3, frappe-ui, PWA, shell, shared views, focused pages, screens per role | Any UI task |
-| `10-platform.md` | Hosting on Dokploy, environments, backups, monitoring, logging, security, testing and CI | Infrastructure and hardening |
+| `10-platform.md` | Hosting on Dokploy, environments, backups, monitoring, logging, security and testing | Infrastructure and hardening |
 | `11-build-plan.md` | Agent rules, epics and tasks, gates, setup checklist, open questions | Planning and before every task |
 
 **Order of authority:** this specification; then the frozen reference material in `sightline-docs/reference/` (approved designs, tokens, email wording and seed item lists copied from the old repo at commit `10c17a3261b985c85f9c78dab18b0f44bf6b7e7f`); then Frappe's own documentation and the source code of Frappe CRM and Helpdesk for framework patterns. The old repository `azharumar/sightline` is history only and is never read for rules. Gaps become a GitHub issue labelled `type:question` in the repository where the work happens, with a proposed default; the agent builds the default and continues, and the answer is written back into this specification.
@@ -98,7 +98,7 @@ Frappe words (DocType, DocPerm, permlevel, docstatus, whitelisted method, child 
 
 ## Copy rules
 
-Plain literal labels; no eyebrows; no em dashes; no slogans; no page description text (page headers show title and actions only); India time for display. A copy lint in CI checks the Vue app, Jinja templates, email templates and fixtures.
+Plain literal labels; no eyebrows; no em dashes; no slogans; no page description text (page headers show title and actions only); India time for display. A copy lint in `scripts/check.sh` checks the Vue app, Jinja templates, email templates and fixtures.
 
 ## Never build
 

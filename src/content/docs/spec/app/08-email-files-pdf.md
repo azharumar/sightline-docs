@@ -9,7 +9,7 @@ sidebar:
 - **Email Account** (fixture plus setup checklist): outgoing only, `email_id = no-reply@sightline.zarnik.com`, sender name "Sightline", SMTP server `smtp.resend.com`, port 587 with STARTTLS (or 465 with SSL), login `resend`, password = Resend API key (entered by Azhar on each site, never in the repo), "Default Outgoing" on. Incoming email is off.
 - Azhar verifies `sightline.zarnik.com` in Resend (SPF, DKIM, DMARC) before the email epic finishes.
 - Frappe's **Email Queue** sends and retries; every email is visible to Admin in the app's email log (a Sightline screen over Email Queue: to, subject, status, error, retry).
-- Development and CI: an Email Account pointing at Mailpit.
+- Development and tests: an Email Account pointing at Mailpit.
 - **Delivery events:** a guest method `sightline.api.webhooks.resend` checks Resend's signature (Svix headers with the signing secret from site config), stores the raw event in a **Sightline Inbound Event** row (unique by event id), and a job marks the Email Queue row and sets `email_bounced` on the user for hard bounces. Bounced addresses are skipped by the notification layer until Admin clears the flag.
 
 ## 2. Notifications

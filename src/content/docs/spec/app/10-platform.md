@@ -8,7 +8,7 @@ sidebar:
 
 - **Production today:** `app.sightline.zarnik.com` points (DNS only) to the Frappe instance at `161.97.167.96`, live with a valid HTTPS certificate (Azhar, 2026-10-18). The app is installed there with `bench get-app` and `bench --site app.sightline.zarnik.com install-app sightline` (see the app repository's README). How that instance is run (bench directly on the host or frappe_docker) is recorded in the runbook once confirmed; until then the points below describe the target setup.
 - Production site `app.sightline.zarnik.com`, staging site `staging.sightline.zarnik.com`, each a separate stack (own MariaDB, redis, workers, scheduler, bucket and secrets). Never two environments on one bench.
-- Image: a custom image built from frappe_docker's `images/custom` Containerfile with `apps.json` listing `frappe` (pinned tag) and `sightline` (this repo, pinned commit). Built in GitHub Actions and pushed to GHCR (`ghcr.io/<owner>/sightline-app:<sha>`). The Vue app is built during the image build (`yarn build` in `frontend`).
+- Image: a custom image built from frappe_docker's `images/custom` Containerfile with `apps.json` listing `frappe` (pinned tag) and `sightline` (this repo, pinned commit). Built on the Dokploy server from this repository at a pinned commit (no GitHub Actions). The Vue app is built during the image build (`yarn build` in `frontend`).
 - Containers: `frontend` (nginx), `backend` (gunicorn), `websocket`, `queue-short`, `queue-long` (and `queue-default`), `scheduler`, `db` (MariaDB), `redis-cache`, `redis-queue`, `backup`. Traefik in Dokploy terminates HTTPS with Let's Encrypt.
 - Deploys: merge to `main` builds the image and deploys staging; production deploys from the `production` branch after staging is green. Deploy runs `bench --site <site> migrate` (DocType changes, patches, fixtures) before switching traffic; `bench build` is part of the image.
 - Rollback: redeploy the previous image; data patches are written to be safe to run twice and never need a reverse.
@@ -19,7 +19,7 @@ sidebar:
 
 - Nightly `bench --site <site> backup` (database and site config; files are in R2) copied to the second server with rclone SFTP; nightly `rclone sync` of the R2 bucket to the same second server without deleting on the backup side.
 - Keep 30 daily and 12 monthly backups.
-- `deploy/backup/restore.sh`: new bench from the same image, `bench --site <site> restore <db.sql.gz>`, point at a restored bucket copy, run a smoke check (login, open an audit report, download a PDF). Tested in CI against a sample backup.
+- `deploy/backup/restore.sh`: new bench from the same image, `bench --site <site> restore <db.sql.gz>`, point at a restored bucket copy, run a smoke check (login, open an audit report, download a PDF). Tested against a sample backup by `scripts/check.sh --full`.
 - Monthly restore test on a fresh server; one full drill before the first real hotel goes live.
 
 ## 3. Monitoring and logging
@@ -40,14 +40,14 @@ sidebar:
 - Invite links expire after 7 days and work once.
 - Files private in R2; links expire in 5 minutes; uploads checked by real type and size.
 - Allowed CSP and security headers set in nginx: `default-src 'self'`, images and connections allowed to the R2 endpoint, `frame-ancestors 'none'`.
-- Secrets only in site config and Dokploy; gitleaks in CI.
-- Dependency checks: `pip-audit` on the app's dependencies and `yarn audit` on the frontend in CI.
+- Secrets only in site config and Dokploy; gitleaks in `scripts/check.sh`.
+- Dependency checks: `pip-audit` on the app's dependencies and `yarn audit` on the frontend in `scripts/check.sh --full`.
 - Admin view as is read only and logged.
 
-## 5. Testing and CI
+## 5. Testing
 
-- **Backend:** `bench --site test_site run-tests --app sightline` (FrappeTestCase) on a fresh site in CI: DocType rules, services, API methods, the security suite, the allow list completeness test. Pure modules (scoring, size band, digest grouping) also run under plain pytest with hypothesis.
+- **Backend:** `bench --site test_site run-tests --app sightline` (FrappeTestCase) on a fresh test site: DocType rules, services, API methods, the security suite, the allow list completeness test. Pure modules (scoring, size band, digest grouping) also run under plain pytest with hypothesis.
 - **Frontend:** ESLint, Prettier, Vitest; Playwright against a running staging-like stack (phone and laptop profiles), with axe checks.
 - **Copy lint** over the Vue app, Jinja templates, email templates and fixtures (em dashes, banned words).
 - **Fixtures check:** `bench --site test_site export-fixtures` produces no diff, so database edits are never left out of the repo.
-- `scripts/check.sh` runs the fast set locally; GitHub Actions runs everything on every pull request with a disposable bench (frappe_docker test setup).
+- No CI. `scripts/check.sh` runs the fast set before every push; `scripts/check.sh --full` runs everything on the developer bench (fresh test site) before merging a pull request that changes DocTypes, permissions, the API or the frontend build.

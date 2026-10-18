@@ -34,7 +34,7 @@ sightline-app/                     sightline-web/
 
 - **Claude Code** reads `CLAUDE.md`, which imports `docs/agents/rules/*.md`, and finds skills in `.claude/skills/`, which are symbolic links into `docs/agents/skills/`.
 - **Cursor** reads `AGENTS.md` and `.cursor/rules/*.mdc` (which reference `docs/agents/rules/*.md`), and finds commands in `.cursor/commands/`, which are symbolic links to the same skill files.
-- `scripts/sync-agent-files.sh` in each repository regenerates the links and copies the GitHub templates from `docs/agents/github/`; CI fails if they drift.
+- `scripts/sync-agent-files.sh` in each repository regenerates the links and copies the GitHub templates from `docs/agents/github/`; `--check` reports drift and is part of the local checks.
 
 ## Changing anything
 
