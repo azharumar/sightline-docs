@@ -1,0 +1,28 @@
+name: Task
+description: One small piece of work (about one hour, one pull request)
+labels: ["type:task"]
+body:
+  - type: textarea
+    id: goal
+    attributes: { label: Goal, description: One or two sentences. }
+    validations: { required: true }
+  - type: textarea
+    id: spec
+    attributes: { label: Spec sections, description: "Exact files and headings in docs/, for example spec/app/04-permissions.md#2-the-access-module" }
+    validations: { required: true }
+  - type: textarea
+    id: files
+    attributes: { label: Files it may touch }
+    validations: { required: true }
+  - type: textarea
+    id: done
+    attributes: { label: Done when, description: A checklist a reviewer can tick. }
+    validations: { required: true }
+  - type: textarea
+    id: tests
+    attributes: { label: Tests }
+    validations: { required: true }
+  - type: input
+    id: depends
+    attributes: { label: Depends on, description: "Issue numbers like #12, #13, or none" }
+    validations: { required: true }

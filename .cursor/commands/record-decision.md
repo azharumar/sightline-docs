@@ -1,0 +1,1 @@
+../../agents/skills/record-decision/SKILL.md

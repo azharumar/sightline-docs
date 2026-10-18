@@ -1,0 +1,944 @@
+{
+ "auditor-home": {
+  "title": "Dashboard",
+  "pageHeight": 2444,
+  "body": "16px/24px",
+  "h1": {
+   "24px/32px/600": 1
+  },
+  "h2": {
+   "18px/28px/600": 2
+  },
+  "h3": {
+   "18px/22.5px/600": 1
+  },
+  "td": {
+   "16px/24px/400": 50
+  },
+  "th": {
+   "16px/24px/500": 8
+  },
+  "label": {
+   "14px/20px/500": 1,
+   "16px/24px/400": 2
+  },
+  "button": {
+   "16px/24px/400": 4,
+   "16px/24px/500": 8,
+   "12px/16px/400": 1
+  },
+  "badge": {
+   "14px/20px/500": 4
+  },
+  "p": {
+   "16px/24px/400": 1,
+   "14px/20px/400": 6
+  },
+  "distinctSizes": [
+   "12px",
+   "14px",
+   "16px",
+   "18px",
+   "20px",
+   "24px"
+  ],
+  "weights": [
+   "400",
+   "500",
+   "600"
+  ],
+  "textCharsBySize": {
+   "14px": 578,
+   "16px": 680,
+   "18px": 50,
+   "24px": 9,
+   "20px": 6,
+   "12px": 40
+  },
+  "targets": 33,
+  "smallTargets": 6,
+  "smallSample": [
+   "button[combobox] h36 w205 \"Auditor: Rohan Iyer\"",
+   "a h24 w139 \"14 Jul 2026\"",
+   "a h24 w231 \"Ops & Quality, October 2026\"",
+   "a h24 w231 \"Ops & Quality, July 2026\"",
+   "a h24 w231 \"Ops & Quality, April 2026\"",
+   "a h24 w231 \"Ops & Quality, January 2026\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [
+   "THEAD.[&_tr]:border-b",
+   "TR.border-b transition-colors hover:bg-mute",
+   "TH.h-10 px-2 text-left align-middle font-me",
+   "TH.h-10 px-2 text-left align-middle font-me",
+   "BUTTON.-mx-2 inline-flex h-touch items-center g",
+   "svg.[object SVGAnimatedString]"
+  ],
+  "scrollers": [
+   "DIV sw652 cw356",
+   "DIV sw608 cw356"
+  ],
+  "reviewBar": 107,
+  "headerH": 56,
+  "h1Top": 187,
+  "h1Bottom": 219,
+  "firstContentTop": 223,
+  "viewportNoise": {
+   "borders": 15,
+   "cards": 10,
+   "badges": 2
+  },
+  "navs": [
+   "Quick actions top271 h104 pos:static",
+   "Main top779 h65 pos:fixed"
+  ]
+ },
+ "auditor-capture": {
+  "title": "Ops & Quality, October 2026",
+  "pageHeight": 2312,
+  "body": "16px/24px",
+  "h1": {
+   "18px/28px/600": 1
+  },
+  "h2": {
+   "20px/28px/600": 1
+  },
+  "h3": {
+   "18px/28px/500": 5
+  },
+  "td": {},
+  "th": {},
+  "label": {
+   "14px/20px/500": 1,
+   "16px/24px/500": 10
+  },
+  "button": {
+   "16px/24px/400": 2,
+   "16px/24px/500": 17,
+   "18px/28px/500": 35,
+   "12px/16px/400": 1
+  },
+  "badge": {
+   "14px/20px/500": 2
+  },
+  "p": {
+   "14px/20px/400": 8
+  },
+  "distinctSizes": [
+   "12px",
+   "14px",
+   "16px",
+   "18px",
+   "20px"
+  ],
+  "weights": [
+   "400",
+   "500",
+   "600"
+  ],
+  "textCharsBySize": {
+   "14px": 585,
+   "16px": 270,
+   "18px": 189,
+   "20px": 20,
+   "12px": 40
+  },
+  "targets": 79,
+  "smallTargets": 16,
+  "smallSample": [
+   "button[combobox] h36 w205 \"Auditor: Rohan Iyer\"",
+   "a h20 w99 \"SOP-HK-001 opens the SOP in a \"",
+   "input h1 w1 \"Take photo for Door, lock and \"",
+   "input h1 w1 \"Add file for Door, lock and sa\"",
+   "a h20 w99 \"SOP-HK-002 opens the SOP in a \"",
+   "input h1 w1 \"Take photo for Cleanliness and\"",
+   "input h1 w1 \"Add file for Cleanliness and s\"",
+   "a h20 w99 \"SOP-HK-003 opens the SOP in a \"",
+   "input h1 w1 \"Take photo for Bed and linen\"",
+   "input h1 w1 \"Add file for Bed and linen\"",
+   "a h20 w99 \"SOP-HK-004 opens the SOP in a \"",
+   "input h1 w1 \"Take photo for Bathroom fixtur\"",
+   "input h1 w1 \"Add file for Bathroom fixtures\"",
+   "a h20 w99 \"SOP-HK-005 opens the SOP in a \""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 107,
+  "headerH": 56,
+  "h1Top": 199,
+  "h1Bottom": 227,
+  "firstContentTop": 255,
+  "viewportNoise": {
+   "borders": 24,
+   "cards": 5,
+   "badges": 2
+  },
+  "navs": [
+   "Main top779 h65 pos:fixed"
+  ]
+ },
+ "auditor-audits": {
+  "title": "Audits",
+  "pageHeight": 844,
+  "body": "16px/24px",
+  "h1": {
+   "24px/32px/600": 1
+  },
+  "h2": {},
+  "h3": {},
+  "td": {
+   "16px/24px/400": 20
+  },
+  "th": {
+   "16px/24px/500": 5
+  },
+  "label": {
+   "14px/20px/500": 1,
+   "16px/24px/400": 1
+  },
+  "button": {
+   "16px/24px/400": 3,
+   "16px/24px/500": 5,
+   "12px/16px/400": 1
+  },
+  "badge": {
+   "14px/20px/500": 4
+  },
+  "p": {
+   "16px/24px/400": 1
+  },
+  "distinctSizes": [
+   "12px",
+   "14px",
+   "16px",
+   "18px",
+   "24px"
+  ],
+  "weights": [
+   "400",
+   "500",
+   "600"
+  ],
+  "textCharsBySize": {
+   "14px": 146,
+   "16px": 295,
+   "18px": 9,
+   "24px": 6,
+   "12px": 40
+  },
+  "targets": 24,
+  "smallTargets": 5,
+  "smallSample": [
+   "button[combobox] h36 w205 \"Auditor: Rohan Iyer\"",
+   "a h24 w231 \"Ops & Quality, October 2026\"",
+   "a h24 w231 \"Ops & Quality, July 2026\"",
+   "a h24 w231 \"Ops & Quality, April 2026\"",
+   "a h24 w231 \"Ops & Quality, January 2026\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [
+   "THEAD.[&_tr]:border-b",
+   "TR.border-b transition-colors hover:bg-mute",
+   "TH.h-10 px-2 text-left align-middle font-me",
+   "BUTTON.-mx-2 inline-flex h-touch items-center g",
+   "svg.[object SVGAnimatedString]",
+   "path.[object SVGAnimatedString]"
+  ],
+  "scrollers": [
+   "DIV sw608 cw356"
+  ],
+  "reviewBar": 107,
+  "headerH": 56,
+  "h1Top": 187,
+  "h1Bottom": 219,
+  "firstContentTop": 223,
+  "viewportNoise": {
+   "borders": 21,
+   "cards": 6,
+   "badges": 8
+  },
+  "navs": [
+   "Main top779 h65 pos:fixed"
+  ]
+ },
+ "hotel_manager-dashboard": {
+  "title": "Dashboard",
+  "pageHeight": 2795,
+  "body": "16px/24px",
+  "h1": {
+   "24px/32px/600": 1
+  },
+  "h2": {
+   "18px/28px/600": 3
+  },
+  "h3": {
+   "18px/22.5px/600": 1
+  },
+  "td": {
+   "16px/24px/400": 53
+  },
+  "th": {
+   "16px/24px/500": 12
+  },
+  "label": {
+   "14px/20px/500": 1,
+   "16px/24px/400": 3
+  },
+  "button": {
+   "16px/24px/400": 5,
+   "16px/24px/500": 11,
+   "12px/16px/400": 1
+  },
+  "badge": {
+   "14px/20px/500": 6
+  },
+  "p": {
+   "16px/24px/400": 1,
+   "14px/20px/400": 6
+  },
+  "distinctSizes": [
+   "12px",
+   "14px",
+   "16px",
+   "18px",
+   "20px",
+   "24px"
+  ],
+  "weights": [
+   "400",
+   "500",
+   "600"
+  ],
+  "textCharsBySize": {
+   "14px": 614,
+   "16px": 829,
+   "18px": 60,
+   "24px": 9,
+   "20px": 6,
+   "12px": 31
+  },
+  "targets": 44,
+  "smallTargets": 7,
+  "smallSample": [
+   "button[combobox] h36 w276 \"Hotel Manager: Priya Menon\"",
+   "a h24 w139 \"14 Jul 2026\"",
+   "a h24 w259 \"Check-out and billing accuracy\"",
+   "a h24 w259 \"Preventive maintenance records\"",
+   "a h24 w228 \"Ops & Quality, July 2026\"",
+   "a h24 w228 \"Ops & Quality, April 2026\"",
+   "a h24 w228 \"Ops & Quality, January 2026\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [
+   "THEAD.[&_tr]:border-b",
+   "TR.border-b transition-colors hover:bg-mute",
+   "TH.h-10 px-2 text-left align-middle font-me",
+   "TH.h-10 px-2 text-left align-middle font-me",
+   "BUTTON.-mx-2 inline-flex h-touch items-center g",
+   "svg.[object SVGAnimatedString]"
+  ],
+  "scrollers": [
+   "DIV sw652 cw356",
+   "DIV sw640 cw356",
+   "DIV sw600 cw356"
+  ],
+  "reviewBar": 107,
+  "headerH": 56,
+  "h1Top": 187,
+  "h1Bottom": 219,
+  "firstContentTop": 223,
+  "viewportNoise": {
+   "borders": 17,
+   "cards": 12,
+   "badges": 2
+  },
+  "navs": [
+   "Quick actions top271 h160 pos:static",
+   "Main top779 h65 pos:fixed"
+  ]
+ },
+ "hotel_manager-fixes": {
+  "title": "Fixes",
+  "pageHeight": 1443,
+  "body": "16px/24px",
+  "h1": {
+   "24px/32px/600": 1
+  },
+  "h2": {},
+  "h3": {},
+  "td": {},
+  "th": {},
+  "label": {
+   "14px/20px/500": 1,
+   "14px/14px/500": 5
+  },
+  "button": {
+   "16px/24px/400": 5,
+   "12px/16px/400": 1
+  },
+  "badge": {
+   "14px/20px/500": 1
+  },
+  "p": {
+   "16px/24px/400": 1,
+   "14px/20px/400": 1
+  },
+  "distinctSizes": [
+   "12px",
+   "14px",
+   "16px",
+   "18px",
+   "24px"
+  ],
+  "weights": [
+   "400",
+   "500",
+   "600"
+  ],
+  "textCharsBySize": {
+   "14px": 414,
+   "16px": 179,
+   "18px": 9,
+   "24px": 9,
+   "12px": 31
+  },
+  "targets": 29,
+  "smallTargets": 1,
+  "smallSample": [
+   "button[combobox] h36 w276 \"Hotel Manager: Priya Menon\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 107,
+  "headerH": 56,
+  "h1Top": 187,
+  "h1Bottom": 219,
+  "firstContentTop": 223,
+  "viewportNoise": {
+   "borders": 17,
+   "cards": 11,
+   "badges": 3
+  },
+  "navs": [
+   "Main top779 h65 pos:fixed"
+  ]
+ },
+ "hotel_manager-fixdetail": {
+  "title": "Check-out and billing accuracy",
+  "pageHeight": 2522,
+  "body": "16px/24px",
+  "h1": {
+   "24px/32px/600": 1
+  },
+  "h2": {},
+  "h3": {
+   "18px/22.5px/600": 6
+  },
+  "td": {},
+  "th": {},
+  "label": {
+   "14px/20px/500": 1,
+   "14px/14px/500": 4
+  },
+  "button": {
+   "16px/24px/400": 2,
+   "16px/24px/500": 4,
+   "12px/16px/400": 1
+  },
+  "badge": {
+   "14px/20px/500": 1
+  },
+  "p": {
+   "16px/24px/400": 2,
+   "14px/20px/400": 3
+  },
+  "distinctSizes": [
+   "12px",
+   "14px",
+   "16px",
+   "18px",
+   "24px"
+  ],
+  "weights": [
+   "400",
+   "500",
+   "600"
+  ],
+  "textCharsBySize": {
+   "14px": 487,
+   "16px": 490,
+   "18px": 60,
+   "24px": 30,
+   "12px": 31
+  },
+  "targets": 24,
+  "smallTargets": 3,
+  "smallSample": [
+   "button[combobox] h36 w276 \"Hotel Manager: Priya Menon\"",
+   "a h19 w96 \"SOP-FO-004\"",
+   "select h1 w1 \"Priya Menon, Hotel Manager Lat\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 107,
+  "headerH": 56,
+  "h1Top": 243,
+  "h1Bottom": 307,
+  "firstContentTop": 315,
+  "viewportNoise": {
+   "borders": 7,
+   "cards": 2,
+   "badges": 2
+  },
+  "navs": [
+   "Main top779 h65 pos:fixed"
+  ]
+ },
+ "admin-dashboard": {
+  "title": "Dashboard",
+  "pageHeight": 3078,
+  "body": "16px/24px",
+  "h1": {
+   "24px/32px/600": 1
+  },
+  "h2": {
+   "18px/28px/600": 3
+  },
+  "h3": {
+   "18px/22.5px/600": 1
+  },
+  "td": {
+   "16px/24px/400": 58
+  },
+  "th": {
+   "16px/24px/500": 12
+  },
+  "label": {
+   "14px/20px/500": 1,
+   "16px/24px/400": 3
+  },
+  "button": {
+   "16px/24px/400": 6,
+   "16px/24px/500": 12,
+   "12px/16px/400": 1
+  },
+  "badge": {
+   "14px/20px/500": 6
+  },
+  "p": {
+   "16px/24px/400": 1,
+   "14px/20px/400": 7
+  },
+  "distinctSizes": [
+   "12px",
+   "14px",
+   "16px",
+   "18px",
+   "20px",
+   "24px"
+  ],
+  "weights": [
+   "400",
+   "500",
+   "600"
+  ],
+  "textCharsBySize": {
+   "14px": 679,
+   "16px": 890,
+   "18px": 60,
+   "24px": 9,
+   "20px": 7,
+   "12px": 37
+  },
+  "targets": 50,
+  "smallTargets": 8,
+  "smallSample": [
+   "button[combobox] h36 w199 \"Admin: Meera Nair\"",
+   "a h24 w139 \"14 Jul 2026\"",
+   "a h24 w259 \"Check-out and billing accuracy\"",
+   "a h24 w259 \"Preventive maintenance records\"",
+   "a h24 w231 \"Ops & Quality, October 2026\"",
+   "a h24 w231 \"Ops & Quality, July 2026\"",
+   "a h24 w231 \"Ops & Quality, April 2026\"",
+   "a h24 w231 \"Ops & Quality, January 2026\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [
+   "THEAD.[&_tr]:border-b",
+   "TR.border-b transition-colors hover:bg-mute",
+   "TH.h-10 px-2 text-left align-middle font-me",
+   "TH.h-10 px-2 text-left align-middle font-me",
+   "BUTTON.-mx-2 inline-flex h-touch items-center g",
+   "svg.[object SVGAnimatedString]"
+  ],
+  "scrollers": [
+   "DIV sw652 cw356",
+   "DIV sw640 cw356",
+   "DIV sw608 cw356"
+  ],
+  "reviewBar": 107,
+  "headerH": 56,
+  "h1Top": 187,
+  "h1Bottom": 219,
+  "firstContentTop": 223,
+  "viewportNoise": {
+   "borders": 17,
+   "cards": 12,
+   "badges": 2
+  },
+  "navs": [
+   "Quick actions top271 h160 pos:static",
+   "Main top779 h65 pos:fixed"
+  ]
+ },
+ "admin-templates": {
+  "title": "Audit templates",
+  "pageHeight": 863,
+  "body": "16px/24px",
+  "h1": {
+   "24px/32px/600": 1
+  },
+  "h2": {},
+  "h3": {},
+  "td": {},
+  "th": {},
+  "label": {
+   "14px/20px/500": 1,
+   "14px/14px/500": 2
+  },
+  "button": {
+   "16px/24px/400": 2,
+   "16px/24px/500": 2,
+   "12px/16px/400": 1
+  },
+  "badge": {
+   "14px/20px/500": 2
+  },
+  "p": {
+   "16px/24px/400": 1
+  },
+  "distinctSizes": [
+   "12px",
+   "14px",
+   "16px",
+   "18px",
+   "24px"
+  ],
+  "weights": [
+   "400",
+   "500",
+   "600"
+  ],
+  "textCharsBySize": {
+   "14px": 175,
+   "16px": 180,
+   "18px": 9,
+   "24px": 15,
+   "12px": 37
+  },
+  "targets": 24,
+  "smallTargets": 5,
+  "smallSample": [
+   "button[combobox] h36 w199 \"Admin: Meera Nair\"",
+   "a h40 w80 \"Library\"",
+   "a h40 w114 \"Draft items\"",
+   "a h40 w152 \"Audit templates\"",
+   "a h40 w135 \"Hotel settings\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [
+   "LI.",
+   "A.inline-flex h-10 items-center rounded-md"
+  ],
+  "scrollers": [
+   "NAV sw489 cw358"
+  ],
+  "reviewBar": 107,
+  "headerH": 56,
+  "h1Top": 187,
+  "h1Bottom": 219,
+  "firstContentTop": 223,
+  "viewportNoise": {
+   "borders": 10,
+   "cards": 5,
+   "badges": 2
+  },
+  "navs": [
+   "Masters top295 h48 pos:static",
+   "Main top779 h65 pos:fixed"
+  ]
+ },
+ "admin-users": {
+  "title": "Users",
+  "pageHeight": 2695,
+  "body": "16px/24px",
+  "h1": {
+   "24px/32px/600": 1
+  },
+  "h2": {},
+  "h3": {},
+  "td": {},
+  "th": {},
+  "label": {
+   "14px/20px/500": 1,
+   "14px/14px/500": 4
+  },
+  "button": {
+   "16px/24px/400": 4,
+   "16px/24px/500": 2,
+   "12px/16px/400": 1
+  },
+  "badge": {
+   "14px/20px/500": 13
+  },
+  "p": {
+   "16px/24px/400": 1,
+   "14px/20px/400": 1
+  },
+  "distinctSizes": [
+   "12px",
+   "14px",
+   "16px",
+   "18px",
+   "24px"
+  ],
+  "weights": [
+   "400",
+   "500",
+   "600"
+  ],
+  "textCharsBySize": {
+   "14px": 1225,
+   "16px": 245,
+   "18px": 9,
+   "24px": 5,
+   "12px": 37
+  },
+  "targets": 50,
+  "smallTargets": 1,
+  "smallSample": [
+   "button[combobox] h36 w199 \"Admin: Meera Nair\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 107,
+  "headerH": 56,
+  "h1Top": 187,
+  "h1Bottom": 219,
+  "firstContentTop": 223,
+  "viewportNoise": {
+   "borders": 14,
+   "cards": 8,
+   "badges": 3
+  },
+  "navs": [
+   "Main top779 h65 pos:fixed"
+  ]
+ },
+ "group_head-dashboard": {
+  "title": "Dashboard",
+  "pageHeight": 2795,
+  "body": "16px/24px",
+  "h1": {
+   "24px/32px/600": 1
+  },
+  "h2": {
+   "18px/28px/600": 3
+  },
+  "h3": {
+   "18px/22.5px/600": 1
+  },
+  "td": {
+   "16px/24px/400": 53
+  },
+  "th": {
+   "16px/24px/500": 12
+  },
+  "label": {
+   "14px/20px/500": 1,
+   "16px/24px/400": 3
+  },
+  "button": {
+   "16px/24px/400": 5,
+   "16px/24px/500": 12,
+   "12px/16px/400": 1
+  },
+  "badge": {
+   "14px/20px/500": 6
+  },
+  "p": {
+   "16px/24px/400": 1,
+   "14px/20px/400": 6
+  },
+  "distinctSizes": [
+   "12px",
+   "14px",
+   "16px",
+   "18px",
+   "20px",
+   "24px"
+  ],
+  "weights": [
+   "400",
+   "500",
+   "600"
+  ],
+  "textCharsBySize": {
+   "14px": 614,
+   "16px": 830,
+   "18px": 60,
+   "24px": 9,
+   "20px": 6,
+   "12px": 37
+  },
+  "targets": 45,
+  "smallTargets": 7,
+  "smallSample": [
+   "button[combobox] h36 w265 \"Group Head: Anil Varghese\"",
+   "a h24 w139 \"14 Jul 2026\"",
+   "a h24 w259 \"Check-out and billing accuracy\"",
+   "a h24 w259 \"Preventive maintenance records\"",
+   "a h24 w228 \"Ops & Quality, July 2026\"",
+   "a h24 w228 \"Ops & Quality, April 2026\"",
+   "a h24 w228 \"Ops & Quality, January 2026\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [
+   "THEAD.[&_tr]:border-b",
+   "TR.border-b transition-colors hover:bg-mute",
+   "TH.h-10 px-2 text-left align-middle font-me",
+   "TH.h-10 px-2 text-left align-middle font-me",
+   "BUTTON.-mx-2 inline-flex h-touch items-center g",
+   "svg.[object SVGAnimatedString]"
+  ],
+  "scrollers": [
+   "DIV sw652 cw356",
+   "DIV sw640 cw356",
+   "DIV sw600 cw356"
+  ],
+  "reviewBar": 107,
+  "headerH": 56,
+  "h1Top": 187,
+  "h1Bottom": 219,
+  "firstContentTop": 223,
+  "viewportNoise": {
+   "borders": 18,
+   "cards": 13,
+   "badges": 2
+  },
+  "navs": [
+   "Quick actions top271 h160 pos:static",
+   "Main top779 h65 pos:fixed"
+  ]
+ },
+ "group_head-reports": {
+  "title": "Reports",
+  "pageHeight": 1283,
+  "body": "16px/24px",
+  "h1": {
+   "24px/32px/600": 1
+  },
+  "h2": {},
+  "h3": {
+   "16px/24px/500": 3
+  },
+  "td": {},
+  "th": {},
+  "label": {
+   "14px/20px/500": 1,
+   "14px/14px/500": 3
+  },
+  "button": {
+   "16px/24px/400": 3,
+   "16px/24px/500": 4,
+   "12px/16px/400": 1
+  },
+  "badge": {
+   "14px/20px/500": 1
+  },
+  "p": {
+   "16px/24px/400": 1,
+   "14px/20px/400": 4
+  },
+  "distinctSizes": [
+   "12px",
+   "14px",
+   "16px",
+   "18px",
+   "24px"
+  ],
+  "weights": [
+   "400",
+   "500",
+   "600"
+  ],
+  "textCharsBySize": {
+   "14px": 201,
+   "16px": 251,
+   "18px": 9,
+   "24px": 7,
+   "12px": 37
+  },
+  "targets": 26,
+  "smallTargets": 4,
+  "smallSample": [
+   "button[combobox] h36 w265 \"Group Head: Anil Varghese\"",
+   "button[tab] h40 w128 \"Audit reports\"",
+   "button[tab] h40 w111 \"History\"",
+   "button[tab] h40 w111 \"Compare\""
+  ],
+  "overflow": {
+   "doc": 390,
+   "client": 390
+  },
+  "wide": [],
+  "scrollers": [],
+  "reviewBar": 107,
+  "headerH": 56,
+  "h1Top": 187,
+  "h1Bottom": 219,
+  "firstContentTop": 223,
+  "viewportNoise": {
+   "borders": 13,
+   "cards": 8,
+   "badges": 2
+  },
+  "navs": [
+   "Main top779 h65 pos:fixed"
+  ]
+ }
+}

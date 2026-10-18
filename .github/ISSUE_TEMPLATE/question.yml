@@ -1,0 +1,16 @@
+name: Question
+description: Something only Azhar can decide
+labels: ["type:question", "needs-human"]
+body:
+  - type: textarea
+    id: question
+    attributes: { label: Question, description: One clear question. }
+    validations: { required: true }
+  - type: textarea
+    id: context
+    attributes: { label: Context, description: Where it came up and which spec section it touches. }
+    validations: { required: true }
+  - type: textarea
+    id: default
+    attributes: { label: Proposed default, description: What the agent builds until answered, and how hard it is to change later. }
+    validations: { required: true }
