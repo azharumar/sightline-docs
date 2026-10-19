@@ -17,11 +17,11 @@ The rules for agents live in `sightline-docs/agents/rules/` (`core.md` for every
 - Every new whitelisted method is added to the allow list in the same pull request, with a security test.
 - Screens only in the Sightline app (`frontend/`); no Desk screens for Sightline users. Design tokens from zarnik-ds only; copy rules apply.
 - One task, one branch, one pull request, about one hour of work. Commit and push after every working step. Tests in every pull request. `scripts/check.sh` passes before pushing; `scripts/check.sh --full` before merge where section 5 of `10-platform.md` asks for it. No CI.
-- Diffs touching `core/access.py`, `core/allow_list.py`, auth, view as, files or the security suite are read in full by the orchestrating session or Azhar before merge.
+- Diffs touching `core/access.py`, `core/allow_list.py`, auth, view as, files or the security suite are read in full by an independent `review-pr` agent before merge.
 - Secrets only in site config and the server's secret store; never commit or ask for production values.
-- Stop at every gate and tell Azhar exactly what to check.
+- Never stop at a gate: an agent checks what it can, files failures as bugs, and lists what is left for Azhar, who reviews the whole app after the build is complete. Problems he finds become bug issues.
 
-**Pipeline:** one GitHub issue per task in `azharumar/sightline-app` (goal, spec sections, files it may touch, done-when list, tests), grouped under an epic issue as sub-issues → `status:ready` → an agent takes it (`status:in-progress`), builds on branch `issue-<number>-<slug>`, runs the checks, opens a pull request that closes the issue → merges when the local checks pass and no human label applies → takes the next ready issue. Two failed rounds on the same failure: `status:blocked` with the reason. Status lives on the issues and the GitHub Project, never in files. Full loop: `agents/workflow`.
+**Pipeline:** one GitHub issue per task in `azharumar/sightline-app` (goal, spec sections, files it may touch, done-when list, tests), grouped under an epic issue as sub-issues → `status:ready` → an agent takes it (`status:in-progress`), builds on branch `issue-<number>-<slug>`, runs the checks, opens a pull request that closes the issue → merges when the local checks pass (`security` pull requests after an independent agent review) → takes the next ready issue. Two failed rounds on the same failure: `status:blocked` with the reason. Status lives on the issues and the GitHub Project, never in files. Full loop: `agents/workflow`.
 
 ## 2. Epics and tasks
 
@@ -200,7 +200,7 @@ The spikes must pass before E1 starts. Any failure is written up as a `type:ques
 
 ## 3. Gates
 
-| Gate | After | Azhar checks |
+| Gate | After | Azhar checks (in the final review, does not block the build) |
 |---|---|---|
 | 0 | E0 spikes (#12) | Spike results: app mount at `/s/`, Website Users, per-hotel roles, PWA install and PDF |
 | 1 | E1 | `/design` matches the approved design |

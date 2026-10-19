@@ -13,9 +13,9 @@ Run `docs/agents/github/setup-labels.sh <owner/repo>` once (needs the GitHub CLI
 |---|---|
 | `type:epic`, `type:task`, `type:spike`, `type:question`, `type:bug` | Kind of issue |
 | `status:ready`, `status:in-progress`, `status:in-review`, `status:blocked` | Where the issue is |
-| `needs-human` | Only Azhar can move it (questions, gates) |
+| `needs-human` | For Azhar's answer or final review; never blocks the loop (questions, gates) |
 | `gate` | A review gate from the build plan |
-| `security` | Touches access, auth, view as, files or security tests; human review before merge |
+| `security` | Touches access, auth, view as, files or security tests; an independent review agent merges it |
 | `area:backend`, `area:frontend`, `area:infra`, `area:docs`, `area:tests` | Part of the system |
 | `size:s`, `size:m` | About 30 minutes, about one hour |
 | `epic:E0` to `epic:E13` | Which epic of the build plan |
@@ -30,7 +30,7 @@ By Azhar's decision (2026-10-18), the repositories have no GitHub Actions workfl
 
 - Never push to `main`; always a branch and a pull request.
 - Run the repository's checks locally before every push, including `scripts/sync-agent-files.sh --check` in `sightline-app` and `sightline-web`.
-- Merge your own pull request (squash) once the checks pass. Never merge a pull request labelled `security` or `needs-human`.
+- Merge your own pull request (squash) once the checks pass. A pull request labelled `security` is merged only by an independent `review-pr` agent.
 - Never add a workflow file, a required check or a repository secret.
 
 Issues, sub-issues, labels and Projects are free on GitHub Free and are all the loop needs.
