@@ -5,7 +5,7 @@ sidebar:
   order: 1
 ---
 
-The build runs as a loop over GitHub issues. Each issue is small and self-contained, so an agent needs only the issue, the rules and the spec sections it names. A human is needed only at gates, for `type:question` answers, and to review `security` pull requests.
+The build runs as a loop over GitHub issues. Each issue is small and self-contained, so an agent needs only the issue, the rules and the spec sections it names. The loop never waits for a person. Questions are built on their defaults, `security` pull requests are reviewed and merged by an independent agent, and gates are checked by an agent and left for Azhar's review of the whole app after the build.
 
 ## 1. Issues
 
@@ -16,7 +16,7 @@ The build runs as a loop over GitHub issues. Each issue is small and self-contai
 | Spike | `type:spike` | A time-boxed experiment that answers a question with evidence (Epic 0) |
 | Question | `type:question` + `needs-human` | Something only Azhar can decide, with a proposed default |
 | Bug | `type:bug` | A defect found after merge |
-| Gate | `gate` + `needs-human` | A review gate from the build plan. Tasks after it depend on it |
+| Gate | `gate` + `needs-human` | A review gate from the build plan. An agent checks what it can; Azhar reviews it after the build. Nothing depends on it |
 
 Every task or spike body follows the template in `agents/github/ISSUE_TEMPLATE/task.yml`:
 
@@ -33,17 +33,18 @@ Every task or spike body follows the template in `agents/github/ISSUE_TEMPLATE/t
 
 Status is a label, mirrored in the GitHub Project's Status field: no label (backlog) → `status:ready` → `status:in-progress` → `status:in-review` → closed. `status:blocked` carries a comment saying why. Agents change labels; nobody edits status in files.
 
-An issue is **ready** when it is open, has `status:ready`, has no `needs-human` label, and every issue in "Depends on" is closed.
+An issue is **ready** when it is an open task, spike or bug with `status:ready` and every task in "Depends on" is closed. A dependency on a gate or question issue counts as met.
 
 ## 3. The loop
 
 **`build-loop`** (orchestrator, `agents/skills/build-loop/SKILL.md`):
 
 1. List ready issues in the repository, lowest epic first, then lowest number.
-2. If none are ready, promote backlog tasks of the current epic whose dependencies are closed to `status:ready`. If still none, stop and report what is blocked and why.
+2. If none are ready, promote backlog tasks of the current epic whose dependencies are met to `status:ready`. If the epic has no open tasks left, run `plan-epic` for the next epic. If still none, stop and report what is blocked and why.
 3. Hand the first ready issue to a fresh sub-agent running **`next-task`** with only the issue number. Independent issues (no shared files, no dependency between them) may run in parallel, at most 3.
-4. Record the outcome (merged, blocked, waiting for security review) and go back to step 1.
-5. Stop when an epic's gate issue is the only thing left, when the same issue fails twice, or after the run limit you were given.
+4. Record the outcome (merged, blocked, needs security review). A `security` pull request goes to a fresh sub-agent running `review-pr`, which merges it on no findings; findings go back to `next-task`, at most two rounds, then `status:blocked`.
+5. When a gate's tasks are all closed, a sub-agent checks the gate items it can verify, comments the evidence, files failures as ready `type:bug` issues and leaves the gate open for Azhar's final review.
+6. Go back to step 1. Stop only when nothing is buildable or after the run limit you were given.
 
 **`next-task`** (one issue, `agents/skills/next-task/SKILL.md`):
 
@@ -52,13 +53,13 @@ An issue is **ready** when it is open, has `status:ready`, has no `needs-human` 
 3. Branch `issue-<number>-<slug>` from the latest `main`. Build in small commits; push after each.
 4. Run the repository's checks locally (the "Checks before every push" list in its rules file). Fix until clean.
 5. Open a pull request: title = issue title, body from the template, `Closes #<number>`. Label `status:in-review` on the issue.
-6. Merge: if the change touches a `security` path or the issue has `needs-human`, label the pull request `security` and stop. Otherwise squash-merge it yourself once the local checks pass on the latest commit. There is no CI, no branch protection and no required check to wait for.
+6. Merge: if the change touches a `security` path, label the pull request `security` and report "needs security review"; the orchestrator hands it to an independent `review-pr` agent. Otherwise squash-merge it yourself once the local checks pass on the latest commit. There is no CI, no branch protection and no required check to wait for.
 7. If the checks keep failing: after two failed rounds on the same failure, label the issue `status:blocked`, comment the failure, and stop.
 8. Report in at most 5 lines: issue, pull request, result, anything left open.
 
 ## 4. Questions and decisions
 
-- An agent that hits something unclear does not stop the loop: it opens a `type:question` issue with a proposed default (`ask-question` skill), builds the default if it is safe to change later, notes the question number in its pull request, and continues.
+- An agent that hits something unclear does not stop the loop: it opens a `type:question` issue with a proposed default (`ask-question` skill), builds the default (the most conservative option when a change would need a migration), notes the question number in its pull request, and continues.
 - When Azhar answers, an agent runs `record-decision`: updates the specification in `sightline-docs`, adds a Decisions log entry, moves the submodule in the consuming repository, and closes the question.
 
 ## 5. Planning (rolling waves)
@@ -75,5 +76,5 @@ Only the current epic has task issues. When an epic's last task is merged, `plan
 ## 7. Guardrails
 
 - The repositories have no GitHub Actions workflows, no branch protection and no repository secrets, by Azhar's decision. Agents never push to `main` directly; they merge their own pull requests after the local checks pass. Never add a workflow, a required check or a secret.
-- Agents never merge `security` or `needs-human` pull requests, never close gate issues, never close questions without an answer from Azhar.
+- The agent that built a `security` pull request never reviews or merges it; only an independent `review-pr` agent with no findings does. Agents never close gate issues and never close questions without an answer from Azhar.
 - Agents never change a check to make it pass, and never skip or delete tests.

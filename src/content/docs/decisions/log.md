@@ -7,6 +7,7 @@ The app specification states the current rule; this log says when and why it was
 
 | Date | Decision | Reason | Where it applies |
 |---|---|---|---|
+| 2026-10-19 | The build loop runs without people: agents take security decisions (`security` pull requests merged by an independent `review-pr` agent), gates are agent-checked and never block later work, questions never block a task. Azhar reviews the whole app in detail after the build is complete | Azhar's instruction | `agents/workflow`, app spec `11` |
 | 2026-10-18 | No GitHub Actions workflows, no branch protection and no repository secrets in any repository (GitHub Free, private). Agents run the checks locally and merge their own pull requests; images are built on the Dokploy server | No paid GitHub plan | `agents/github-setup` |
 | 2026-10-18 | `sightline-web` is connected to Netlify at `sightline-web.netlify.app`; `sightline-docs` is connected to Netlify | Set up by Azhar | `agents/rules/web.md` |
 | 2026-10-18 | Three repositories: `sightline-docs` (single source of truth, Astro Starlight on Netlify), `sightline-app` (Frappe app), `sightline-web` (Astro site on Netlify); app and web include docs as a submodule | One source of truth so agents and people never read contradicting copies | All |

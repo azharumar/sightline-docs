@@ -19,7 +19,7 @@ Adds to `core.md`. The specification is `docs/src/content/docs/spec/app/` (start
 - Every hotel data read goes through `sightline.core.access` (Frappe permission hooks or `access.query_condition`). Every write goes through a service that calls `access.require`. No role names in code outside the access module and tests.
 - Every new whitelisted method is added to the API allow list in the same pull request, with a security test.
 - Admin has no access to issues, including through view as. Auditors have no access to issues.
-- Pull requests that touch `sightline/core/access.py`, `sightline/core/allow_list.py`, authentication, view as, files or the security tests get the `security` label and are not merged by agents; Azhar or the orchestrating session reviews them.
+- Pull requests that touch `sightline/core/access.py`, `sightline/core/allow_list.py`, authentication, view as, files or the security tests get the `security` label and are merged only after an independent agent (not the one that built them) runs `review-pr` with no findings.
 
 ## Screens
 
